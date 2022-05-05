@@ -40,29 +40,49 @@ export default class CustomModal extends Component{
             <ModalBody>
               <Form>
                 <FormGroup>
-                  <Label for="todo-title">Title</Label>
+                  <Label for="task-name">Name</Label>
                   <Input
                     type="text"
-                    id="todo-title"
-                    name="title"
+                    id="task-name"
+                    name="name"
                     value={this.state.activeItem.title}
                     onChange={this.handleChange}
-                    placeholder="Enter Todo Title"
+                    placeholder="Enter Task name"
                   />
                 </FormGroup>
-                    <FormGroup>
-              <Label for="todo-description">Description</Label>
+            <FormGroup>
+              <Label for="task-description">Description</Label>
               <Input
                 type="text"
-                id="todo-description"
+                id="task-description"
                 name="description"
                 value={this.state.activeItem.description}
                 onChange={this.handleChange}
-                placeholder="Enter Todo description"
+                placeholder="Enter Task description"
               />
             </FormGroup>
-                </form>
-            </modalbody>
-        )
-    }
+            <FormGroup check>
+              <Label check>
+                <Input
+                  type="checkbox"
+                  name="completed"
+                  checked={this.state.activeItem.completed}
+                  onChange={this.handleChange}
+                />
+                Completed
+              </Label>
+            </FormGroup>
+            </Form>
+        </ModalBody>
+        <ModalFooter>
+          <Button
+            color="success"
+            onClick={() => onSave(this.state.activeItem)}
+          >
+            Save
+          </Button>
+        </ModalFooter>
+      </Modal>
+    );
+  }
 }
