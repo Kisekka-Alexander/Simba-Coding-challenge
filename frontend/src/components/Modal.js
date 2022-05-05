@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import {
-    button,
-    modal,
-    modalheader,
-    modalfooter,
-    modalbody,
-    form,
-    formgroup,
-    input,
-    label,
+    Button,
+    Modal,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
+    Form,
+    FormGroup,
+    Input,
+    Label,
 } from "reactstrap";
 
 export default class CustomModal extends Component{
@@ -35,7 +35,34 @@ export default class CustomModal extends Component{
         const {toggle, onSave} = this.props;
 
         return(
-            <modal isOpen = {true} toggle={toggle}>
+            <Modal isOpen={true} toggle={toggle}>
+            <ModalHeader toggle={toggle}>Todo Item</ModalHeader>
+            <ModalBody>
+              <Form>
+                <FormGroup>
+                  <Label for="todo-title">Title</Label>
+                  <Input
+                    type="text"
+                    id="todo-title"
+                    name="title"
+                    value={this.state.activeItem.title}
+                    onChange={this.handleChange}
+                    placeholder="Enter Todo Title"
+                  />
+                </FormGroup>
+                    <FormGroup>
+              <Label for="todo-description">Description</Label>
+              <Input
+                type="text"
+                id="todo-description"
+                name="description"
+                value={this.state.activeItem.description}
+                onChange={this.handleChange}
+                placeholder="Enter Todo description"
+              />
+            </FormGroup>
+                </form>
+            </modalbody>
         )
     }
 }
