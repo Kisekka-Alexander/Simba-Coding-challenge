@@ -35,45 +35,45 @@ export default class CustomModal extends Component{
         const {toggle, onSave} = this.props;
 
         return(
-            <Modal isOpen={true} toggle={toggle}>
+          <Modal isOpen={true} toggle={toggle}>
             <ModalHeader toggle={toggle}>Todo Item</ModalHeader>
             <ModalBody>
               <Form>
                 <FormGroup>
-                  <Label for="task-name">Name</Label>
+                  <Label for="todo-name">Name</Label>
                   <Input
                     type="text"
-                    id="task-name"
+                    id="todo-name"
                     name="name"
-                    value={this.state.activeItem.title}
+                    value={this.state.activeItem.name}
                     onChange={this.handleChange}
                     placeholder="Enter Task name"
                   />
                 </FormGroup>
-            <FormGroup>
-              <Label for="task-description">Description</Label>
-              <Input
-                type="text"
-                id="task-description"
-                name="description"
-                value={this.state.activeItem.description}
-                onChange={this.handleChange}
-                placeholder="Enter Task description"
-              />
-            </FormGroup>
-            <FormGroup check>
-              <Label check>
-                <Input
-                  type="checkbox"
-                  name="completed"
-                  checked={this.state.activeItem.completed}
-                  onChange={this.handleChange}
-                />
-                Completed
-              </Label>
-            </FormGroup>
-            </Form>
-        </ModalBody>
+                <FormGroup>
+                  <Label for="todo-description">Description</Label>
+                    <Input
+                      type="text"
+                      id="todo-description"
+                      name="description"
+                      value={this.state.activeItem.description}
+                      onChange={this.handleChange}
+                      placeholder="Enter Task description"
+                    />
+                </FormGroup>
+                <FormGroup check>
+                  <Label check>
+                    <Input
+                      type="checkbox"
+                      name="completed"
+                      checked={this.state.activeItem.completed}
+                      onChange={this.handleChange}
+                    />
+                    Completed
+                  </Label>
+                </FormGroup>
+              </Form>
+           </ModalBody>
         <ModalFooter>
           <Button
             color="success"
