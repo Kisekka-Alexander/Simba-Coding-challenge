@@ -101,12 +101,12 @@ class App extends Component {
         className="list-group-item d-flex justify-content-between align-items-center"
       >
         <span
-          className={`todo-title mr-2 ${
+          className={`todo-name mr-2 ${
             this.state.viewCompleted ? "completed-todo" : ""
           }`}
-          title={item.description}
+          name={item.description}
         >
-          {item.title}
+          {item.name}
         </span>
         <span>
           <button
