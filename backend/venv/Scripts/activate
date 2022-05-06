@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\projects\react\simba-coding-challenge\backend\venv"
+VIRTUAL_ENV="D:\PROJECTS\REACT\Simba-Coding-challenge\backend\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
